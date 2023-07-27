@@ -3,9 +3,7 @@
 
 Welcome to the React Image Editor! This simple web application allows you to add images with a single click and provides an intuitive editing feature to annotate your photos.
 
-## Demo
 
-Insert a GIF or screenshot showcasing your React Image Editor in action.
 
 ## Features
 
