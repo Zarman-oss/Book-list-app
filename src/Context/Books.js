@@ -1,24 +1,18 @@
-import { func } from "prop-types";
-import { createContext, useState } from "react";
+import { createContext, useState } from 'react';
+import axios from 'axios';
 
 const BooksContext = createContext();
 
 function Provider({ children }) {
-    const [count, setCount] = useState([]);
+  const [books, setBooks] = useState([]);
 
-    const valueToShare = {
-        count,
-        IncrementCount: () => {
-            setCount(count + 1);
-        }
-    }
-    return (
-        <BooksContext.Provider value={valueToShare}>
-            {children}
-        </BooksContext.Provider>
-    );
+  const fetchBooks = async () => {
+    const response = await axios.get('https:localhost:3001/books');
+    setBooks(response.data);
+  };
+
+  return <BooksContext.Provider value={{}}>{children}</BooksContext.Provider>;
 }
 
 export { Provider };
 export default BooksContext;
-
